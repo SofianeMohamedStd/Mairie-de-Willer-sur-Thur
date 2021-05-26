@@ -1,0 +1,29 @@
+{% extends 'base_logged_out.html.twig' %}
+
+{% block title %}Créer un compte{% endblock %}
+
+{% block content %}
+
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <div class="center">
+        <img src="{{ asset('build/images/logo-willer-vertical.png') }} "
+             alt="Logo Willer-sur-Thur"
+             class="mx-auto mb-10 ">
+    </div>
+
+    <h2 class="title_2">Créer mon compte</h1>
+
+    {{ form_start(registrationForm) }}
+    {{ form_row(registrationForm.firstname) }}
+    {{ form_row(registrationForm.lastname) }}
+    {{ form_row(registrationForm.phone) }}
+    {{ form_row(registrationForm.email) }}
+    {{ form_row(registrationForm.plainPassword) }}
+    {{ form_row(registrationForm.agreeTerms) }}
+
+    <button type="submit" class="btn-primary">Créer mon compte</button>
+    {{ form_end(registrationForm) }}
+{% endblock %}

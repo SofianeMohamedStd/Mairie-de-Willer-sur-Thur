@@ -1,0 +1,21 @@
+{% extends 'base_logged_out.html.twig' %}
+
+{% block title %}Demande de mot de passe envoyée{% endblock %}
+
+{% block content %}
+    <div class="center">
+        <img src="{{ asset('build/images/logo-willer-vertical.png') }} "
+             alt="Logo Willer-sur-Thur"
+             class="mx-auto mb-10 ">
+    </div>
+
+    <p>
+        Un email contenant un lien pour reinitialiser votre mot de passe vous a été envoyé.
+        Ce lien sera valide pendant {{ resetToken.expirationMessageKey|trans(resetToken.expirationMessageData, 'ResetPasswordBundle') }}.<br><br>
+    </p>
+    <p>Si vous ne recevez pas cet email, merci de vérifier votre dossier "spams".
+        <br>Vous pouvez également<a class="text-willerGreen hover:underline" href="{{ path('app_forgot_password_request') }}"> faire une nouvelle demande </a>.</p>
+
+    <a href="{{ path('home') }}" class="btn-primary">Retourner à l'accueil</a>
+
+{% endblock %}

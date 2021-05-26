@@ -1,0 +1,82 @@
+{% extends 'base_logged_out.html.twig' %}
+
+{% block title %}Connexion a la plateforme {% endblock %}
+
+{% block content %}
+
+    <div class="login__messages">
+        {% if error %}
+            <div class="flash-container alert-error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        {% if app.user %}
+            <div class="mb-3 bg-willerBlue text-white p-5 mb-4">
+                Vous êtes déjà connecté en tant que {{ app.user.username }}, <a
+                        href="{{ path('app_logout') }}">Déconnecter</a>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="center">
+        <img src="{{ asset('build/images/logo-willer-vertical.png') }}"
+             alt="Logo Willer-sur-Thur"
+             class="mx-auto mb-10 ">
+    </div>
+
+    <div class="flex divide-x divide-opacity-20 ">
+        <div class="p-10 w-1/2">
+
+            <h2 class="title_2">Déjà enregistré ? </h2>
+
+            <form method="post">
+
+                <div class="mb-6">
+                    <label for="inputEmail"
+                           class="login__form_label">Email</label>
+                    <input type="email" value="{{ last_username }}" name="email" id="inputEmail"
+                           class="login__form_field"
+                           required autofocus>
+                </div>
+
+                <div>
+                    <label class="login__form_label" for="inputPassword">Mot depasse</label>
+                    <input type="password" name="password" id="inputPassword"
+                           class="login__form_field"
+                           required>
+                </div>
+
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                <button type="submit" class="btn-primary"type="submit">Se connecter</button>
+
+            </form>
+
+            <a href="{{ path('app_forgot_password_request') }}"
+               class="link__primary">Mot
+                de passe oublié ?</a>
+        </div>
+
+        <div class="register p-10 w-1/2">
+            <h2 class="title_2">
+                Première visite ? </h2>
+
+            <p class="text-base">
+                <strong>Bienvenue dans votre mairie !</strong> <br><br>
+                Vous pouvez créer votre compte en cliquant sur le bouton ci-dessous. <br><br>
+                Il vous permettra de communiquer avec la mairie de manière dématérialisée.
+            </p>
+
+            <a href="{{ path('app_register') }}" class="btn-primary w-full">Créer un compte</a>
+        </div>
+    </div>
+
+    {# <div class="login__franceConnect"> #}
+    {# <img src="{{ asset('build/images/franceConnect/FCboutons-10.svg') }}" alt="" class="mx-auto h-20 mt-10"> #}
+    {# </div> #}
+
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,29 @@
+{% extends 'email/base.html.twig' %}
+
+{% block subject %}
+    Nous avons besoin de valider votre email !
+{% endblock %}
+
+
+{% block content %}
+    <row>
+        <columns>
+            <p>
+                Bonjour,
+            </p>
+            <p>
+                Bienvenue sur la plateforme citoyenne de Willer-sur-Thur : <br><br>
+                Pour valider votre inscription, merci de <a href="{{ signedUrl|raw }}">confirmer votre email</a>.
+            </p>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            Ce lien est valide pendant {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+        </columns>
+    </row>
+{% endblock %}
+
+
+
+

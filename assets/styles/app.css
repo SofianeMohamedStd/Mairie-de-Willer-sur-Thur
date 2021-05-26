@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Maven+Pro:wght@200;400;700;900&family=Poppins:wght@200;400;700&display=swap');
+
+body{
+    @apply text-base text-gray-600 font-text
+}
+
+body.logged_in{
+    @apply bg-gray-200
+}
+
+h1, h2, h3{
+    @apply font-title uppercase text-willerGreen tracking-tighter
+}
+
+/********** generics********************/
+
+.title_2{
+    @apply uppercase font-title text-2xl text-willerGreen tracking-tighter border-b-2 border-willerGreen pb-4 mb-10
+}
+
+.btn-primary{
+    @apply block text-center transition duration-300 ease-in-out  w-full mt-5 focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-willerBlue hover:shadow-lg
+    /*@apply transition duration-300 ease-in-out  mt-5 text-center block  focus:outline-none text-white text-sm py-2.5 px-5 rounded-md bg-blue-500 hover:bg-willerBlue hover:shadow-lg*/
+}
+
+.link__primary{
+    @apply block text-center focus:outline-none text-blue-600 text-sm hover:underline mt-5
+}
+
+.login__container{
+    background-image: url("../images/image-willer-bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login__form_field{
+    @apply bg-gray-50 transition duration-200 ease-in-out mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-gray-500 dark:text-gray-800
+}
+
+.login__form_field.error_field{
+    @apply bg-gray-50 transition duration-200 ease-in-out mt-0 block w-full px-0.5 border-0 border-b-2 border-red-700 focus:ring-0 focus:border-gray-500
+}
+
+.login__form_label{
+    @apply font-text pb-2 text-sm text-gray-500 dark:text-gray-100
+}
+
+.login__container_background_blur{
+    background: rgba(2, 89, 144, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+.flash-container{
+    @apply p-5 mb-4
+}
+
+.flash-container.alert-success{
+    @apply bg-willerGreen text-white
+}
+
+.flash-container.alert-info{
+    @apply bg-willerBlue text-white
+}
+
+.flash-container.alert-warning{
+    @apply bg-yellow-400 text-yellow-900 text-white
+}
+
+.flash-container.alert-error{
+    @apply bg-red-700 text-white
+}
+
+
+

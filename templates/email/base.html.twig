@@ -1,0 +1,46 @@
+<link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+
+{% apply inline_css(source('@styles/mail.css')) %}
+
+    <container>
+        <row class="header">
+            <div>
+                <img src="{{ email.image('@images/logo-willer-vertical.png') }}"
+                     alt="Logo Willer-sur-Thur">
+            </div>
+        </row>
+
+        <row>
+            <columns>
+                <h1 class="title">{% block subject %}{% endblock %}</h1>
+            </columns>
+        </row>
+
+        {% block content %}
+
+        {% endblock %}
+
+        <row>
+            <columns>
+                <div  class="footer">
+                    <p>
+                        Mairie de Willer-sur-Thur <br>
+                        17, rue de la Grande Armée <br>
+                        68760 - Willer-sur-Thur
+                    </p>
+                    <p>
+                        Tel : 03.89.38.16.50
+                    </p>
+                </div>
+
+            </columns>
+        </row>
+
+    </container>
+
+
+
+{% endapply %}
+
+

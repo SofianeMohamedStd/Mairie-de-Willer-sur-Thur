@@ -1,0 +1,9 @@
+{% for flashKey in app.session.flashBag.keys %}
+    <div class="flash-container alert-{{ flashKey }}">
+        {% for flash in app.session.flashBag.get(flashKey) %}
+            <pp class="text-center">
+                {{ flash|trans|raw }}
+            </pp>
+        {% endfor %}
+    </div>
+{% endfor %}

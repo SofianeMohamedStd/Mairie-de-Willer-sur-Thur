@@ -1,0 +1,41 @@
+
+body{
+     background-color: white;
+    font-family: Poppins, serif;
+}
+
+h1.title{
+    font-size: 20px;
+    color : #025990;
+    font-family: 'Maven Pro', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: -2px;
+    margin: 30px 0;
+}
+
+.header{
+    text-align: center;
+    width:100%;
+}
+
+.header div{
+    border-bottom: 1px #025990 solid;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.header div img{
+    max-height: 100px;
+    margin: 30px;
+}
+
+.footer{
+    margin-top: 20px;
+    padding: 10px 0;
+    font-size: 12px;
+    background-color: #555555;
+    color: white;
+    text-align: center;
+}
+

@@ -1,0 +1,32 @@
+{% extends 'email/base.html.twig' %}
+
+{% block subject %}
+    Nous avons besoin de valider votre email !
+{% endblock %}
+
+{% block content %}
+
+    <row>
+        <p style="color: red">CECI EST UN EMAIL DE TEST</p>
+    </row>
+
+    <row>
+        <columns>
+            <p>
+                Bonjour,
+            </p>
+            <p>
+                Bienvenue sur la plateforme citoyenne de Willer-sur-Thur : <br><br>
+                Pour valider votre inscription, merci de <a href="https://www.google.fr">confirmer votre email</a>.
+            </p>
+        </columns>
+    </row>
+    <row>
+        <columns>
+            Ce lien est valide pendant une heure.
+        </columns>
+    </row>
+{% endblock %}
+
+
+

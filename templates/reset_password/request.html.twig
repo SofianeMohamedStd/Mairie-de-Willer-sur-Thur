@@ -1,0 +1,30 @@
+{% extends 'base_logged_out.html.twig' %}
+
+{% block title %}Demander un nouveau mot de passe{% endblock %}
+
+{% block content %}
+    <div class="w-full">
+        {% for flashError in app.flashes('reset_password_error') %}
+            <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+        {% endfor %}
+
+        <div class="center w-full">
+            <img src="{{ asset('build/images/logo-willer-vertical.png') }} "
+                 alt="Logo Willer-sur-Thur"
+                 class="mx-auto mb-10 ">
+        </div>
+
+        <h2 class="title_2">Mot de passe oublié</h2>
+
+        <p class="mb-4"><strong>Ce formulaire vous permettra créer un nouveau mot de passe.</strong> <br>
+            Entrez votre adresse email et nous vous enverrons un email contenant des instructions détailées.</p>
+
+        {{ form_start(requestForm) }}
+        {{ form_row(requestForm.email) }}
+        <button class="btn-primary">Demander mon nouveau mot de passe</button>
+
+        <a href="{{ path('home') }}" class="link__primary">Retourner à l'accueil</a>
+
+        {{ form_end(requestForm) }}
+    </div>
+{% endblock %}
